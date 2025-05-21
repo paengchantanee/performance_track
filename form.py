@@ -23,30 +23,49 @@ department = employee_row["department"]
 
 # 🔹 เกณฑ์หลัก (Core criteria)
 core_criteria = ["Teamwork", "Punctuality", "Professionalism"]
+core_captions = {
+    "Teamwork": "ความสามารถในการทำงานร่วมกับผู้อื่น",
+    "Punctuality": "การตรงต่อเวลาและรักษาวินัย",
+    "Professionalism": "การแสดงออกอย่างมืออาชีพ"
+}
 
 # 🔸 เกณฑ์เฉพาะตามแผนก
 criteria_by_department = {
     "Sales": ["Communication", "Target Achievement", "Negotiation"],
     "IT": ["Analytical Thinking", "Accuracy", "Communication"]
 }
-department_criteria = criteria_by_department.get(department, [])
+department_captions = {
+    "Communication": "ทักษะการสื่อสารที่มีประสิทธิภาพ",
+    "Target Achievement": "การบรรลุเป้าหมายที่ตั้งไว้",
+    "Negotiation": "ความสามารถในการเจรจาต่อรอง",
+    "Analytical Thinking": "ความสามารถในการวิเคราะห์ปัญหา",
+    "Accuracy": "ความถูกต้องในการทำงาน"
+}
 
-# รวมเกณฑ์ทั้งหมด
+# รวมเกณฑ์และคำอธิบาย
+department_criteria = criteria_by_department.get(department, [])
 all_criteria = core_criteria + department_criteria
 
-# ✅ ฟอร์มประเมิน (ไม่ซ้อนกับฟอร์มอื่น)
+# ฟอร์มกรอกข้อมูล
 with st.form("evaluation_form"):
     st.write("📋 โปรดให้คะแนนตามเกณฑ์")
 
     evaluator_type = st.selectbox("คุณคือใคร (ผู้ประเมิน)", ["Self", "Manager", "Peer", "Subordinate"])
+    st.write("___")
 
     scores = {}
     for crit in all_criteria:
+        # แสดงคำอธิบายใต้หัวข้อก่อนแสดง slider
+        if crit in core_captions:
+            st.caption(core_captions[crit])
+        elif crit in department_captions:
+            st.caption(department_captions[crit])
+
         score = st.slider(f"{crit}", min_value=1, max_value=5, value=3)
         scores[crit] = score
 
-    # ✅ ปุ่มส่งข้อมูล
     submitted = st.form_submit_button("✅ บันทึกผลการประเมิน")
+
 
 # บันทึกข้อมูลเมื่อกด Submit
 if submitted:
