@@ -1,13 +1,3 @@
 employee_id,evaluator_type,criteria,score
 E001,Manager,Communication,4
-E001,Peer,Target Achievement,3
-E001,Self,Negotiation,5
-E002,Manager,Analytical Thinking,4
-E002,Peer,Communication,4
-E002,Self,Accuracy,5
-E001,Self,Communication,3
-E001,Self,Target Achievement,3
-E001,Self,Negotiation,3
-E002,Subordinate,Analytical Thinking,5
-E002,Subordinate,Accuracy,5
-E002,Subordinate,Communication,5
+

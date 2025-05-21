@@ -1,3 +1,3 @@
-employee_id,name,position
-E001,สมชาย,Sales Executive
-E002,สมหญิง,Data Analyst
+employee_id,name,department
+E001,Alex,Sales
+E002,Bob,IT
