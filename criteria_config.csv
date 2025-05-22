@@ -1,10 +1,17 @@
-department,criteria,caption
-Core,Teamwork,ความสามารถในการทำงานร่วมกับผู้อื่น
-Core,Punctuality,การตรงต่อเวลาและรักษาวินัย
-Core,Professionalism,การแสดงออกอย่างมืออาชีพ
-Sales,Communication,ทักษะการสื่อสารที่มีประสิทธิภาพ
-Sales,Target Achievement,การบรรลุเป้าหมายที่ตั้งไว้
-Sales,Negotiation,ความสามารถในการเจรจาต่อรอง
-IT,Communication,ทักษะการสื่อสารที่มีประสิทธิภาพ
-IT,Analytical Thinking,ความสามารถในการวิเคราะห์ปัญหา
-IT,Accuracy,ความถูกต้องในการทำงาน
+﻿department,criteria,caption_eng,caption_th
+Core,Time Management,This person prioritizes their workload effectively and meets deadlines.,พนักงาน
+Core,Communication,This person communicates clearly and effectively with me and other colleagues.,
+Core,Leadership,This person exhibits strong leadership skills.,
+Core,Interpersonal Skills & Teamwork,This person has strong interpersonal skills and helps everyone feel welcome on the team.,
+Core,Professionalism & Company Values,This team member strongly embodies our company values.,
+Core,Responsiveness to Feedback,This person is always timely and efficient at providing feedback.,
+Core,Collaboration,This employee prioritizes teamwork above all else.,
+Core,Problem-Solving & Initiative,This person finds creative solutions and takes initiative when problem-solving.,
+Core,Openness to Feedback,This employee is always open to receiving both negative and positive feedback.,
+Core,Valuing Diversity & Inclusivity,This person values diverse perspectives even if they are different from their own.,
+Sales,Selling Skills,This employee demonstrates strong core selling skills,
+Marketing,Creative Thinking,This employee consistently generates innovative and effective ideas for marketing campaigns and strategies.,
+IT,Analytical Abilities,This person demonstrates strong abilities in analyzing complex technical problems,
+HR,Advising,This employee provides clear,
+Finance/Accounting,Attention to Detail,This employee demonstrates meticulous attention to detail in all financial reporting,
+Operations,Adaptability and Flexibility,This employee readily adjusts to unforeseen operational disruptions,
