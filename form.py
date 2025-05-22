@@ -2,16 +2,17 @@ import streamlit as st
 import pandas as pd
 import os
 
-st.header("📝 กรอกแบบประเมินพนักงาน (360 Evaluation Form)")
+st.header("📝 360 Evaluation Form (กรอกแบบประเมินพนักงาน)")
 
-# โหลดไฟล์ข้อมูลพนักงาน
+# Read file
 employee_df = pd.read_csv("employee_info.csv")
+criteria_config = pd.read_csv("criteria_config.csv")
 
-# เลือกแผนกก่อน 
+# Select department 
 departments = sorted(employee_df["department"].unique())
 selected_department = st.selectbox("เลือกแผนก", departments)
 
-# เลือกผู้ถูกประเมิน (กรองตามแผนก)
+# Select employee
 filtered_employees = employee_df[employee_df["department"] == selected_department]
 employee_names = filtered_employees["name"].tolist()
 employee_selected = st.selectbox("เลือกพนักงานที่ต้องการประเมิน", employee_names)
@@ -21,29 +22,14 @@ employee_row = filtered_employees[filtered_employees["name"] == employee_selecte
 employee_id = employee_row["employee_id"]
 department = employee_row["department"]
 
-# 🔹 เกณฑ์หลัก (Core criteria)
-core_criteria = ["Teamwork", "Punctuality", "Professionalism"]
-core_captions = {
-    "Teamwork": "ความสามารถในการทำงานร่วมกับผู้อื่น",
-    "Punctuality": "การตรงต่อเวลาและรักษาวินัย",
-    "Professionalism": "การแสดงออกอย่างมืออาชีพ"
-}
+# 🔹 ดึงเกณฑ์หลักและเฉพาะแผนกจากไฟล์ config
+core_criteria_df = criteria_config[criteria_config["department"] == "Core"]
+dept_criteria_df = criteria_config[criteria_config["department"] == department]
 
-# 🔸 เกณฑ์เฉพาะตามแผนก
-criteria_by_department = {
-    "Sales": ["Communication", "Target Achievement", "Negotiation"],
-    "IT": ["Analytical Thinking", "Accuracy", "Communication"]
-}
-department_captions = {
-    "Communication": "ทักษะการสื่อสารที่มีประสิทธิภาพ",
-    "Target Achievement": "การบรรลุเป้าหมายที่ตั้งไว้",
-    "Negotiation": "ความสามารถในการเจรจาต่อรอง",
-    "Analytical Thinking": "ความสามารถในการวิเคราะห์ปัญหา",
-    "Accuracy": "ความถูกต้องในการทำงาน"
-}
+core_criteria = core_criteria_df["criteria"].tolist()
+department_criteria = dept_criteria_df["criteria"].tolist()
+captions_dict = pd.concat([core_criteria_df, dept_criteria_df]).set_index("criteria")["caption"].to_dict()
 
-# รวมเกณฑ์และคำอธิบาย
-department_criteria = criteria_by_department.get(department, [])
 all_criteria = core_criteria + department_criteria
 
 # ฟอร์มกรอกข้อมูล
@@ -55,19 +41,15 @@ with st.form("evaluation_form"):
 
     scores = {}
     for crit in all_criteria:
-        # แสดงคำอธิบายใต้หัวข้อก่อนแสดง slider
-        if crit in core_captions:
-            st.caption(core_captions[crit])
-        elif crit in department_captions:
-            st.caption(department_captions[crit])
+        if crit in captions_dict:
+            st.caption(captions_dict[crit])
 
         score = st.slider(f"{crit}", min_value=1, max_value=5, value=3)
         scores[crit] = score
 
     submitted = st.form_submit_button("✅ บันทึกผลการประเมิน")
 
-
-# บันทึกข้อมูลเมื่อกด Submit
+# บันทึกข้อมูล
 if submitted:
     new_data = pd.DataFrame([{
         "employee_id": employee_id,
