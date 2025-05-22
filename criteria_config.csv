@@ -1,17 +1,41 @@
 ﻿department,criteria,caption_eng,caption_th
-Core,Time Management,This person prioritizes their workload effectively and meets deadlines.,พนักงาน
-Core,Communication,This person communicates clearly and effectively with me and other colleagues.,
-Core,Leadership,This person exhibits strong leadership skills.,
-Core,Interpersonal Skills & Teamwork,This person has strong interpersonal skills and helps everyone feel welcome on the team.,
-Core,Professionalism & Company Values,This team member strongly embodies our company values.,
-Core,Responsiveness to Feedback,This person is always timely and efficient at providing feedback.,
-Core,Collaboration,This employee prioritizes teamwork above all else.,
-Core,Problem-Solving & Initiative,This person finds creative solutions and takes initiative when problem-solving.,
-Core,Openness to Feedback,This employee is always open to receiving both negative and positive feedback.,
-Core,Valuing Diversity & Inclusivity,This person values diverse perspectives even if they are different from their own.,
-Sales,Selling Skills,This employee demonstrates strong core selling skills,
-Marketing,Creative Thinking,This employee consistently generates innovative and effective ideas for marketing campaigns and strategies.,
-IT,Analytical Abilities,This person demonstrates strong abilities in analyzing complex technical problems,
-HR,Advising,This employee provides clear,
-Finance/Accounting,Attention to Detail,This employee demonstrates meticulous attention to detail in all financial reporting,
-Operations,Adaptability and Flexibility,This employee readily adjusts to unforeseen operational disruptions,
+Core,Time Management,This person prioritizes their workload effectively and meets deadlines.,พนักงานคนนี้จัดลำดับความสำคัญของงานได้อย่างมีประสิทธิภาพและทำงานเสร็จตรงเวลาหรือไม่?
+Core,Communication,This person communicates clearly and effectively with me and other colleagues.,บุคคลนี้สื่อสารกับฉันและเพื่อนร่วมงานคนอื่นๆ ได้อย่างชัดเจนและมีประสิทธิภาพหรือไม่?
+Core,Leadership,This person exhibits strong leadership skills.,บุคคลนี้แสดงให้เห็นถึงทักษะความเป็นผู้นำที่แข็งแกร่งหรือไม่?
+Core,Interpersonal Skills & Teamwork,This person has strong interpersonal skills and helps everyone feel welcome on the team.,พนักงานคนนี้มีทักษะความสัมพันธ์ระหว่างบุคคลที่ดีและช่วยให้ทุกคนรู้สึกเป็นที่ต้อนรับในทีมหรือไม่?
+Core,Professionalism & Company Values,This person strongly embodies our company values.,สมาชิกในทีมคนนี้ยึดมั่นในค่านิยมของบริษัทของเราอย่างมากหรือไม่?
+Core,Responsiveness to Feedback,This person is always timely and efficient at providing feedback.,บุคคลนี้ให้ข้อเสนอแนะได้ตรงเวลาและมีประสิทธิภาพเสมอหรือไม่?
+Core,Collaboration,This person prioritizes teamwork above all else.,พนักงานคนนี้ให้ความสำคัญกับการทำงานเป็นทีมมาเป็นอันดับแรกหรือไม่?
+Core,Problem-Solving & Initiative,This person finds creative solutions and takes initiative when problem-solving.,บุคคลนี้หาวิธีแก้ไขปัญหาอย่างสร้างสรรค์และมีความคิดริเริ่มในการแก้ปัญหาหรือไม่?
+Core,Openness to Feedback,This person is always open to receiving both negative and positive feedback.,พนักงานคนนี้เปิดใจรับฟังข้อเสนอแนะทั้งเชิงลบและเชิงบวกเสมอหรือไม่?
+Core,Valuing Diversity & Inclusivity,This person values diverse perspectives even if they are different from their own.,บุคคลนี้ให้คุณค่ากับมุมมองที่หลากหลาย แม้ว่าจะแตกต่างจากความคิดของตนเองหรือไม่?
+Sales,Selling Skills,Does this employee clearly articulate our product's value to customers?,พนักงานคนนี้ทำยอดขายได้ตามเป้าหมายหรือเกินเป้าหมายอย่างสม่ำเสมอหรือไม่?
+Sales,Delivering Results,Does this employee consistently meet or exceed their sales targets? ,พนักงานคนนี้สามารถโน้มน้าวการตัดสินใจของลูกค้าได้อย่างมีประสิทธิภาพหรือไม่?
+Sales,Influencing,Does this employee effectively influence customer decisions?,พนักงานคนนี้ยังคงมีทัศนคติที่ดีแม้เผชิญหน้ากับความล้มเหลวหรือไม่?
+Sales,Resilience,Does this employee maintain a positive attitude despite setbacks?,พนักงานคนนี้สามารถอธิบายคุณค่าเฉพาะของผลิตภัณฑ์ของเราให้ลูกค้าได้อย่างชัดเจนหรือไม่?
+Sales,Commercial and Financial Awareness,Does this employee show a strong understanding of our market and competitors?,พนักงานคนนี้แสดงให้เห็นถึงความเข้าใจในตลาดและคู่แข่งของเราเป็นอย่างดีหรือไม่?
+Marketing,Creative Thinking,Does this employee consistently generate creative marketing ideas?,พนักงานคนนี้สร้างสรรค์ไอเดียทางการตลาดใหม่ๆ อย่างสม่ำเสมอหรือไม่?
+Marketing,Analytical Thinking,Does this employee use data effectively to make marketing decisions?,พนักงานคนนี้ใช้ข้อมูลเพื่อช่วยในการตัดสินใจทางการตลาดได้อย่างมีประสิทธิภาพหรือไม่?
+Marketing,Storytelling,Does this employee craft compelling messages that resonate with our audience?,พนักงานคนนี้สามารถสร้างเรื่องราวและข้อความที่น่าสนใจซึ่งดึงดูดกลุ่มเป้าหมายของเราได้หรือไม่?
+Marketing,Negotiation,Does this employee effectively negotiate with vendors or partners?,พนักงานคนนี้สามารถเจรจากับผู้ขายหรือคู่ค้าได้อย่างมีประสิทธิภาพหรือไม่?
+Marketing,Stress Management,Does this employee manage pressure well during demanding campaigns?,พนักงานคนนี้จัดการกับความกดดันระหว่างช่วงแคมเปญที่ต้องเร่งรีบได้ดีหรือไม่?
+IT,Customer Service and Client Interaction,Does this employee effectively translate technical issues for non-technical users?,พนักงานคนนี้สามารถอธิบายปัญหาหรือวิธีแก้ไขทางเทคนิคที่ซับซ้อนให้ผู้ใช้ที่ไม่ใช่สายเทคนิคเข้าใจได้หรือไม่?
+IT,Adaptability and Flexibility,Does this employee readily adapt to new technologies or changing priorities?,พนักงานคนนี้ปรับตัวเข้ากับเทคโนโลยีใหม่ๆ หรือการเปลี่ยนแปลงลำดับความสำคัญได้อย่างรวดเร็วหรือไม่?
+IT,Problem Solving,Does this employee proactively identify and solve complex technical problems?,พนักงานคนนี้สามารถระบุและแก้ไขปัญหาทางเทคนิคที่ซับซ้อนได้อย่างเชิงรุกหรือไม่?
+IT,Emotional Intelligence,Does this employee handle stressful situations with calm and composure?,พนักงานคนนี้รับมือกับสถานการณ์ที่ตึงเครียดด้วยความสงบหรือไม่?
+IT,Curiosity,Does this employee show a strong desire to learn new IT skills?,พนักงานคนนี้แสดงความสนใจอย่างแรงกล้าที่จะเรียนรู้ทักษะด้าน IT ใหม่ๆ หรือไม่?
+HR,Managing Priorities,Does this employee manage multiple HR priorities effectively?,พนักงานคนนี้สามารถจัดการลำดับความสำคัญของงาน HR ได้อย่างมีประสิทธิภาพหรือไม่?
+HR,Proactivity,Does this employee proactively address potential employee issues?,พนักงานคนนี้สามารถระบุปัญหาเกี่ยวกับพนักงานที่อาจเกิดขึ้นได้อย่างเชิงรุกหรือไม่?
+HR,Advising,Does this employee provide clear and effective advice to employees and managers?,พนักงานคนนี้ให้คำแนะนำที่ชัดเจนและมีประสิทธิภาพแก่พนักงานและผู้บริหารหรือไม่?
+HR,Active Listening,Does this employee demonstrate active listening when dealing with sensitive matters?,พนักงานคนนี้รับฟังอย่างตั้งใจเมื่อต้องจัดการเรื่องละเอียดอ่อนหรือไม่?
+HR,Cultural Awareness and Sensitivity,Does this employee show strong cultural awareness and sensitivity in their interactions?,พนักงานคนนี้แสดงความตระหนักและความละเอียดอ่อนทางวัฒนธรรมในการโต้ตอบหรือไม่?
+Finance/Accounting,Attention to Detail,Does this employee consistently show meticulous attention to detail in their work?,พนักงานคนนี้มีความแม่นยำและรอบคอบในงานบัญชีของตนเองอย่างสม่ำเสมอหรือไม่?
+Finance/Accounting,Data Storytelling,Does this employee effectively communicate complex financial data to others?,พนักงานคนนี้สามารถสื่อสารข้อมูลทางการเงินที่ซับซ้อนให้ผู้อื่นเข้าใจได้อย่างมีประสิทธิภาพหรือไม่?
+Finance/Accounting,Foresight,Does this employee anticipate future financial risks or opportunities?,พนักงานคนนี้คาดการณ์ความเสี่ยงหรือโอกาสทางการเงินในอนาคตได้หรือไม่?
+Finance/Accounting,Negotiation skills,Does this employee effectively negotiate financial terms or agreements?,พนักงานคนนี้สามารถเจรจาต่อรองข้อตกลงหรือเงื่อนไขทางการเงินได้อย่างมีประสิทธิภาพหรือไม่?
+Finance/Accounting,Influencing skills,Does this employee influence financial decisions across the organization?,พนักงานคนนี้มีอิทธิพลต่อการตัดสินใจทางการเงินทั่วทั้งองค์กรหรือไม่?
+Operations,Effective Communication,Does this employee clearly communicate operational processes and issues?,พนักงานคนนี้สื่อสารกระบวนการและปัญหาการดำเนินงานได้อย่างชัดเจนหรือไม่?
+Operations,Problem-Solving and Critical Thinking,Does this employee effectively identify and solve operational bottlenecks?,พนักงานคนนี้สามารถระบุและแก้ไขปัญหาคอขวดในการดำเนินงานได้อย่างมีประสิทธิภาพหรือไม่?
+Operations,Adaptability and Flexibility,Does this employee adapt quickly to changes in operational demands?,พนักงานคนนี้ปรับตัวเข้ากับการเปลี่ยนแปลงความต้องการในการดำเนินงานได้อย่างรวดเร็วหรือไม่?
+Operations,Time Management and Prioritization,Does this employee effectively manage and prioritize multiple operational tasks?,พนักงานคนนี้สามารถจัดการและจัดลำดับความสำคัญของงานปฏิบัติการหลายอย่างได้อย่างมีประสิทธิภาพหรือไม่?
+Operations,Continuous Improvement and Learning Mindset,Does this employee actively seek ways to improve operational processes?,พนักงานคนนี้แสวงหาวิธีการปรับปรุงกระบวนการปฏิบัติงานอย่างกระตือรือร้นหรือไม่?

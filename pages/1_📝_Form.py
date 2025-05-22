@@ -46,8 +46,10 @@ with st.form("evaluation_form"):
     evaluator_type = st.selectbox("Evaluator (ผู้ประเมิน)", ["Self / ตัวเอง", "Manager / ผู้จัดการ", "Peer / เพื่อนร่วมงาน", "Subordinate / ลูกน้อง"])
     st.write("___")
 
-    st.write("**📋 Please rate according to the criteria.**")
-    st.caption("โปรดให้คะแนนตามเกณฑ์")
+    st.subheader("**📋 Please rate the employee on the following competencies**")
+    st.write("- Using a scale of 1 to 5, where 1 is the least and 5 is the most")
+    st.write("- โปรดให้คะแนนพนักงานตามเกณฑ์ต่อไปนี้ด้วยคะแนน 1 ถึง 5 โดยที่ 1 คือน้อยที่สุดและ 5 คือมากที่สุด")
+    st.badge("15 questions / ข้อ")
 
     scores = {}
     for crit in all_criteria:
