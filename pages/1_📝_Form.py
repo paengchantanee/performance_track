@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 
-st.header("📝 360 Evaluation Form (กรอกแบบประเมินพนักงาน)")
+st.header("📝 360° Evaluation Form (กรอกแบบประเมินพนักงาน)")
 st.write("- This evaluation form is designed for 360-degree evaluation, " \
 "which requires gathering opinions from managers, peers, subordinates, and even oneself " \
 "to obtain a well-rounded and multi-perspective assessment for reliable results.")
