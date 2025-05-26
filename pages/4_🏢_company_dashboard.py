@@ -42,7 +42,7 @@ if section == "Criteria Dashboard":
 
     # Handle empty data
     if criteria_avg.empty:
-        st.warning("No data available for the selected group and year.")
+        st.warning("No data available for the selected group and year. / ไม่พบข้อมูลสำหรับกลุ่มและปีที่เลือก")
     else:
         # Top and bottom
         top_row = criteria_avg.iloc[0]
@@ -81,7 +81,7 @@ elif section == "Department Focus":
     selected_years = st.multiselect("Select Evaluation Year(s) / เลือกปีที่ประเมิน (สามารถเลือกได้มากกว่า 1 ปี)", available_years, default=available_years[0])
     
     if not selected_years:
-        st.warning("Please select at least one year.")
+        st.warning("Please select at least one year. / โปรดเลือกอย่างน้อย 1 ปี")
     else:
         dept_emp_ids = employee_df[employee_df["department"] == selected_department]["employee_id"]
         dept_data = eval_df[(eval_df["employee_id"].isin(dept_emp_ids)) & (eval_df["evaluation_year"].isin(selected_years))]
@@ -130,4 +130,4 @@ elif section == "Trend Over Time":
         fig.update_layout(xaxis=dict(dtick=1))
         st.plotly_chart(fig, use_container_width=True)
     else:
-        st.info("Please select at least one criterion to view the trend.")
+        st.info("Please select at least one criterion to view the trend. / โปรดเลือกอย่างน้อย 1 เกณฑ์")
