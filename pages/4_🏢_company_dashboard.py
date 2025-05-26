@@ -87,7 +87,7 @@ elif section == "Department Focus":
         dept_data = eval_df[(eval_df["employee_id"].isin(dept_emp_ids)) & (eval_df["evaluation_year"].isin(selected_years))]
         
         if dept_data.empty:
-            st.warning("No evaluation data available for the selected department and years.")
+            st.warning("No evaluation data available for the selected department and years. / ไม่พบข้อมูลการประเมินสำหรับแผนกและปีที่เลือก")
         else:
             avg_scores = dept_data.groupby(["evaluation_year", "criteria"])["score"].mean().reset_index()
             avg_scores["score"] = avg_scores["score"].round(2)
