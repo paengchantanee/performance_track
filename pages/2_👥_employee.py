@@ -3,14 +3,19 @@ import pandas as pd
 import os
 
 st.header("👥 Employee data (ข้อมูลพนักงาน)")
-st.write("This application is designed to help you manage employee information viewing the list of employees, adding new entries, or deleting existing ones.")
-st.caption("แอปพลิเคชันนี้ถูกออกแบบมาเพื่อช่วยคุณจัดการข้อมูลพนักงาน โดยสามารถดูรายชื่อพนักงาน เพิ่มพนักงานใหม่ หรือลบพนักงานออกจากระบบได้")
+st.write("- This application is designed to help you manage employee information viewing the list of employees, adding new entries, or deleting existing ones.")
+st.caption("- แอปพลิเคชันนี้ถูกออกแบบมาเพื่อช่วยคุณจัดการข้อมูลพนักงาน โดยสามารถดูรายชื่อพนักงาน เพิ่มพนักงานใหม่ หรือลบพนักงานออกจากระบบได้")
 st.write("___")
 # Load existing employee data
 if os.path.exists("employee_info.csv"):
     employee_df = pd.read_csv("employee_info.csv")
 else:
     employee_df = pd.DataFrame(columns=["employee_id", "name", "Department"]) 
+
+# 🔢 Show number of all employees
+st.metric(label="Total Employees / จำนวนพนักงานทั้งหมด", value=len(employee_df))
+
+st.write("___")
 
 ## View employees by department
 st.subheader("🔍 List of employees by department")
@@ -41,9 +46,9 @@ st.subheader("➕ Add new employee")
 st.caption("> เพิ่มพนักงานใหม่")
 
 with st.form("add_employee_form"):
-    new_id = st.text_input("Employee ID (รหัสพนักงาน)")
-    new_name = st.text_input("Name (ชื่อพนักงาน)")
-    new_dept = st.text_input("Department (แผนก)")
+    new_id = st.text_input("Employee ID / รหัสพนักงาน")
+    new_name = st.text_input("Name / ชื่อพนักงาน")
+    new_dept = st.text_input("Department / แผนก")
 
     submitted = st.form_submit_button("✅ Add / เพิ่ม")
 

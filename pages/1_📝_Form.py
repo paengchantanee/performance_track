@@ -43,7 +43,9 @@ all_criteria = core_criteria + department_criteria
 # Form
 with st.form("evaluation_form"):
 
-    evaluator_type = st.selectbox("Evaluator (ผู้ประเมิน)", ["Self / ตัวเอง", "Manager / ผู้จัดการ", "Peer / เพื่อนร่วมงาน", "Subordinate / ลูกน้อง"])
+    evaluator_type = st.selectbox("Evaluator / ผู้ประเมิน", ["Self / ตัวเอง", "Manager / ผู้จัดการ", "Peer / เพื่อนร่วมงาน", "Subordinate / ลูกน้อง"])
+    evaluator_id = st.text_input("Evaluator ID / รหัสผู้ประเมิน")
+    year = st.number_input("Year of Evaluation / ปีที่ประเมิน", min_value=2000, max_value=2100, value=2025, step=1)
     st.write("___")
 
     st.subheader("**📋 Please rate the employee on the following competencies**")
@@ -65,10 +67,12 @@ with st.form("evaluation_form"):
 # Record the data
 if submitted:
     new_data = pd.DataFrame([{
-        "employee_id": employee_id,
-        "evaluator_type": evaluator_type,
-        "criteria": crit,
-        "score": score
+    "employee_id": employee_id,
+    "evaluator_id": evaluator_id,  # Add this
+    "evaluator_type": evaluator_type,
+    "evaluation_year": year, 
+    "criteria": crit,
+    "score": score
     } for crit, score in scores.items()])
 
     if os.path.exists("evaluation_data.csv"):
