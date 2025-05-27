@@ -23,7 +23,7 @@ if available_years:
         default=[available_years[0]]
     )
 else:
-    st.warning("⚠️ No evaluation years available. / ไม่มีปีที่สามารถประเมินได้")
+    st.warning("⚠️ No evaluation data available. Please fill the form first. / ไม่พบข้อมูลการประเมิน โปรดกรอกแบบประเมินก่อน")
     st.stop()
 
 eval_selected = eval_df[eval_df["evaluation_year"].isin(selected_years)]
