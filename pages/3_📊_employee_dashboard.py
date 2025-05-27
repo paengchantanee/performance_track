@@ -178,21 +178,26 @@ st.dataframe(table, use_container_width=True)
 # 7. Trend Over Time of a Selected Criterion
 st.subheader("📈 Trend Over Time")
 st.caption("> แนวโน้มรายปี")
+
+# Filter relevant evaluation data
 all_emp_eval = eval_df[eval_df["employee_id"] == emp_id]
 all_emp_eval = all_emp_eval[all_emp_eval["criteria"].isin(all_criteria_df["criteria"])]
 
+# Dropdown for selecting criteria
 criteria_options = all_emp_eval["criteria"].unique()
 selected_criterion = st.selectbox("Select a criterion to view trend / เลือกเกณฑ์ที่ต้องการจะดู", criteria_options)
 
+# Prepare trend data
 trend = all_emp_eval[all_emp_eval["criteria"] == selected_criterion]
 trend = trend.groupby("evaluation_year")["score"].mean().reset_index()
 
-# ✅ Convert year to string to force categorical x-axis
+# Convert year to string to force categorical x-axis
 trend["evaluation_year"] = trend["evaluation_year"].astype(str)
 
+# Plot line chart
 fig = px.line(
     trend,
-    x="evaluation_year",  # now a string → no decimal
+    x="evaluation_year",
     y="score",
     markers=True,
     title=f"Trend Over Time: {selected_criterion}",
@@ -200,5 +205,10 @@ fig = px.line(
     height=400
 )
 
-fig.update_layout(yaxis_range=[1, 5])
+fig.update_layout(
+    yaxis_range=[1, 5],
+    xaxis_type="category"  # Force categorical x-axis (no decimals)
+)
+
 st.plotly_chart(fig, use_container_width=True)
+
