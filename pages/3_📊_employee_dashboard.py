@@ -186,11 +186,13 @@ selected_criterion = st.selectbox("Select a criterion to view trend / เลื�
 
 trend = all_emp_eval[all_emp_eval["criteria"] == selected_criterion]
 trend = trend.groupby("evaluation_year")["score"].mean().reset_index()
-trend["evaluation_year"] = trend["evaluation_year"].astype(int)
+
+# ✅ Convert year to string to force categorical x-axis
+trend["evaluation_year"] = trend["evaluation_year"].astype(str)
 
 fig = px.line(
     trend,
-    x="evaluation_year",
+    x="evaluation_year",  # now a string → no decimal
     y="score",
     markers=True,
     title=f"Trend Over Time: {selected_criterion}",
@@ -198,13 +200,5 @@ fig = px.line(
     height=400
 )
 
-fig.update_layout(
-    yaxis_range=[1, 5],
-    xaxis=dict(
-        tickmode="array",
-        tickvals=trend["evaluation_year"].tolist(),  # Show only existing years
-        ticktext=[str(year) for year in trend["evaluation_year"]]  # Show as string to prevent decimals
-    )
-)
-
+fig.update_layout(yaxis_range=[1, 5])
 st.plotly_chart(fig, use_container_width=True)
