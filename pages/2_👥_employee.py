@@ -34,11 +34,12 @@ if not employee_df.empty:
 
     # Employee table
     if not filtered_df.empty:
-        st.dataframe(filtered_df.reset_index(drop=True).rename(lambda x: x + 1))
+        sorted_df = filtered_df.sort_values(by="employee_id")  # Sort by employee ID
+        st.dataframe(sorted_df.reset_index(drop=True))
     else:
         st.warning("⚠️ There are no employees in this department. / ไม่มีพนักงานในแผนกนี้")
 else:
-    st.warning("⚠️ No employee information yet / ยังไม่มีข้อมูลพนักงาน") 
+    st.warning("⚠️ No employee information yet / ยังไม่มีข้อมูลพนักงาน")
 
 st.write("___")
 ## Add new employee
