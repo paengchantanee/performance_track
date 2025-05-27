@@ -186,7 +186,7 @@ selected_criterion = st.selectbox("Select a criterion to view trend / เลื�
 
 trend = all_emp_eval[all_emp_eval["criteria"] == selected_criterion]
 trend = trend.groupby("evaluation_year")["score"].mean().reset_index()
-trend["evaluation_year"] = trend["evaluation_year"].astype(int)  # ✅ Fix year axis
+trend["evaluation_year"] = trend["evaluation_year"].astype(str)  # 🔧 Treat as category to avoid decimals
 
 fig = px.line(
     trend,
