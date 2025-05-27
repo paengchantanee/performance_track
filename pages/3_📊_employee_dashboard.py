@@ -15,7 +15,17 @@ st.caption("- สรุปผลการประเมินเชิงลึ
 
 # Select year(s)
 available_years = sorted(eval_df["evaluation_year"].dropna().unique(), reverse=True)
-selected_years = st.multiselect("Select Evaluation Year(s) / เลือกปี (สามารถเลือกได้มากกว่า 1 ปี)", available_years, default=[available_years[0]])
+
+if available_years:
+    selected_years = st.multiselect(
+        "Select Evaluation Year(s) / เลือกปี (สามารถเลือกได้มากกว่า 1 ปี)",
+        available_years,
+        default=[available_years[0]]
+    )
+else:
+    st.warning("⚠️ No evaluation years available. / ไม่มีปีที่สามารถประเมินได้")
+    st.stop()
+
 eval_selected = eval_df[eval_df["evaluation_year"].isin(selected_years)]
 
 # Select department and employee
