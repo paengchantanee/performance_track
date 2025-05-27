@@ -14,7 +14,7 @@ st.write("- Create more effective goals / สร้างเป้าหมา�
 "- Boost retention and satisfaction / เสริมสร้างความผูกพันและความพึงพอใจของพนักงาน\n" \
 "- Recognize and reward top performers / ยกย่องและให้รางวัลแก่พนักงานที่มีผลงานโดดเด่น")
 
-st.header("🚀How to uses this app?")
+st.header("🚀How to use this app?")
 st.subheader("แอปนี้ใช้อย่างไร?",divider=True)
 st.write("👈Select an app from the sidebar / เลือกแอปจากแถบด้านข้าง")
 st.write("To fill out the evaluation form, click **'📝Form'**. To manage employee data, click **'👥Employee'**. To view evaluation insights, click **'📊Dashboard'**.")
