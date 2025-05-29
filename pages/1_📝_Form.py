@@ -84,3 +84,15 @@ if submitted:
     updated_data.to_csv("evaluation_data.csv", index=False)
     st.success("✅ Data saved successfully!")
     st.success("บันทึกข้อมูลเรียบร้อยแล้ว")
+
+# Load open-ended questions
+open_q_df = pd.read_csv("open_questions.csv")
+okr_questions = open_q_df[open_q_df["department"] == selected_department]
+
+st.markdown("### 📝 Open-Ended Questions") 
+okr_responses = {}
+ 
+for i, row in okr_questions.iterrows():
+    key = f"okr_q_{i}"
+    st.markdown(f"**{row['question_eng']}**")
+    okr_responses[row['question_eng']] = st.text_area("", key=key)
