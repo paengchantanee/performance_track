@@ -1,151 +1,151 @@
-employee_id,evaluator_type,evaluation_year,criteria,score,evaluator_id
-E013,Self / ตัวเอง,2024,Time Management,2,E013
-E013,Self / ตัวเอง,2024,Communication,3,E013
-E013,Self / ตัวเอง,2024,Leadership,1,E013
-E013,Self / ตัวเอง,2024,Interpersonal Skills & Teamwork,4,E013
-E013,Self / ตัวเอง,2024,Professionalism & Company Values,5,E013
-E013,Self / ตัวเอง,2024,Responsiveness to Feedback,3,E013
-E013,Self / ตัวเอง,2024,Collaboration,4,E013
-E013,Self / ตัวเอง,2024,Problem-Solving & Initiative,3,E013
-E013,Self / ตัวเอง,2024,Openness to Feedback,5,E013
-E013,Self / ตัวเอง,2024,Valuing Diversity & Inclusivity,4,E013
-E013,Self / ตัวเอง,2024,Attention to Detail,4,E013
-E013,Self / ตัวเอง,2024,Data Storytelling,2,E013
-E013,Self / ตัวเอง,2024,Flexibility,4,E013
-E013,Self / ตัวเอง,2024,Negotiation skills,3,E013
-E013,Self / ตัวเอง,2024,Critical Thinking,4,E013
-E013,Self / ตัวเอง,2025,Time Management,3,E013
-E013,Self / ตัวเอง,2025,Communication,4,E013
-E013,Self / ตัวเอง,2025,Leadership,3,E013
-E013,Self / ตัวเอง,2025,Interpersonal Skills & Teamwork,5,E013
-E013,Self / ตัวเอง,2025,Professionalism & Company Values,5,E013
-E013,Self / ตัวเอง,2025,Responsiveness to Feedback,4,E013
-E013,Self / ตัวเอง,2025,Collaboration,5,E013
-E013,Self / ตัวเอง,2025,Problem-Solving & Initiative,3,E013
-E013,Self / ตัวเอง,2025,Openness to Feedback,5,E013
-E013,Self / ตัวเอง,2025,Valuing Diversity & Inclusivity,4,E013
-E013,Self / ตัวเอง,2025,Attention to Detail,4,E013
-E013,Self / ตัวเอง,2025,Data Storytelling,3,E013
-E013,Self / ตัวเอง,2025,Flexibility,4,E013
-E013,Self / ตัวเอง,2025,Negotiation skills,4,E013
-E013,Self / ตัวเอง,2025,Critical Thinking,4,E013
-E013,Manager / ผู้จัดการ,2024,Time Management,3,E020
-E013,Manager / ผู้จัดการ,2024,Communication,4,E020
-E013,Manager / ผู้จัดการ,2024,Leadership,3,E020
-E013,Manager / ผู้จัดการ,2024,Interpersonal Skills & Teamwork,4,E020
-E013,Manager / ผู้จัดการ,2024,Professionalism & Company Values,3,E020
-E013,Manager / ผู้จัดการ,2024,Responsiveness to Feedback,2,E020
-E013,Manager / ผู้จัดการ,2024,Collaboration,4,E020
-E013,Manager / ผู้จัดการ,2024,Problem-Solving & Initiative,3,E020
-E013,Manager / ผู้จัดการ,2024,Openness to Feedback,3,E020
-E013,Manager / ผู้จัดการ,2024,Valuing Diversity & Inclusivity,4,E020
-E013,Manager / ผู้จัดการ,2024,Attention to Detail,4,E020
-E013,Manager / ผู้จัดการ,2024,Data Storytelling,4,E020
-E013,Manager / ผู้จัดการ,2024,Flexibility,3,E020
-E013,Manager / ผู้จัดการ,2024,Negotiation skills,4,E020
-E013,Manager / ผู้จัดการ,2024,Critical Thinking,3,E020
-E013,Manager / ผู้จัดการ,2025,Time Management,5,E020
-E013,Manager / ผู้จัดการ,2025,Communication,4,E020
-E013,Manager / ผู้จัดการ,2025,Leadership,4,E020
-E013,Manager / ผู้จัดการ,2025,Interpersonal Skills & Teamwork,5,E020
-E013,Manager / ผู้จัดการ,2025,Professionalism & Company Values,4,E020
-E013,Manager / ผู้จัดการ,2025,Responsiveness to Feedback,4,E020
-E013,Manager / ผู้จัดการ,2025,Collaboration,4,E020
-E013,Manager / ผู้จัดการ,2025,Problem-Solving & Initiative,3,E020
-E013,Manager / ผู้จัดการ,2025,Openness to Feedback,4,E020
-E013,Manager / ผู้จัดการ,2025,Valuing Diversity & Inclusivity,4,E020
-E013,Manager / ผู้จัดการ,2025,Attention to Detail,5,E020
-E013,Manager / ผู้จัดการ,2025,Data Storytelling,4,E020
-E013,Manager / ผู้จัดการ,2025,Flexibility,4,E020
-E013,Manager / ผู้จัดการ,2025,Negotiation skills,4,E020
-E013,Manager / ผู้จัดการ,2025,Critical Thinking,3,E020
-E013,Peer / เพื่อนร่วมงาน,2024,Time Management,3,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Communication,2,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Leadership,3,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Interpersonal Skills & Teamwork,4,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Professionalism & Company Values,2,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Responsiveness to Feedback,3,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Collaboration,4,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Problem-Solving & Initiative,3,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Openness to Feedback,4,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Valuing Diversity & Inclusivity,3,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Attention to Detail,4,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Data Storytelling,2,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Flexibility,3,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Negotiation skills,4,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Critical Thinking,3,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Time Management,4,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Communication,4,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Leadership,3,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Interpersonal Skills & Teamwork,4,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Professionalism & Company Values,4,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Responsiveness to Feedback,5,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Collaboration,4,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Problem-Solving & Initiative,4,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Openness to Feedback,4,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Valuing Diversity & Inclusivity,3,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Attention to Detail,4,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Data Storytelling,3,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Flexibility,3,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Negotiation skills,4,E014
-E013,Peer / เพื่อนร่วมงาน,2025,Critical Thinking,4,E014
-E013,Peer / เพื่อนร่วมงาน,2024,Time Management,3,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Communication,4,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Leadership,3,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Interpersonal Skills & Teamwork,4,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Professionalism & Company Values,3,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Responsiveness to Feedback,4,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Collaboration,5,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Problem-Solving & Initiative,3,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Openness to Feedback,4,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Valuing Diversity & Inclusivity,3,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Attention to Detail,3,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Data Storytelling,4,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Flexibility,3,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Negotiation skills,2,E015
-E013,Peer / เพื่อนร่วมงาน,2024,Critical Thinking,4,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Time Management,4,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Communication,3,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Leadership,3,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Interpersonal Skills & Teamwork,4,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Professionalism & Company Values,4,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Responsiveness to Feedback,4,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Collaboration,5,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Problem-Solving & Initiative,4,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Openness to Feedback,4,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Valuing Diversity & Inclusivity,5,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Attention to Detail,3,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Data Storytelling,4,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Flexibility,3,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Negotiation skills,4,E015
-E013,Peer / เพื่อนร่วมงาน,2025,Critical Thinking,4,E015
-E013,Subordinate / ลูกน้อง,2024,Time Management,3,E030
-E013,Subordinate / ลูกน้อง,2024,Communication,4,E030
-E013,Subordinate / ลูกน้อง,2024,Leadership,4,E030
-E013,Subordinate / ลูกน้อง,2024,Interpersonal Skills & Teamwork,3,E030
-E013,Subordinate / ลูกน้อง,2024,Professionalism & Company Values,3,E030
-E013,Subordinate / ลูกน้อง,2024,Responsiveness to Feedback,4,E030
-E013,Subordinate / ลูกน้อง,2024,Collaboration,4,E030
-E013,Subordinate / ลูกน้อง,2024,Problem-Solving & Initiative,4,E030
-E013,Subordinate / ลูกน้อง,2024,Openness to Feedback,3,E030
-E013,Subordinate / ลูกน้อง,2024,Valuing Diversity & Inclusivity,4,E030
-E013,Subordinate / ลูกน้อง,2024,Attention to Detail,3,E030
-E013,Subordinate / ลูกน้อง,2024,Data Storytelling,4,E030
-E013,Subordinate / ลูกน้อง,2024,Flexibility,3,E030
-E013,Subordinate / ลูกน้อง,2024,Negotiation skills,4,E030
-E013,Subordinate / ลูกน้อง,2024,Critical Thinking,3,E030
-E013,Subordinate / ลูกน้อง,2025,Time Management,5,E030
-E013,Subordinate / ลูกน้อง,2025,Communication,4,E030
-E013,Subordinate / ลูกน้อง,2025,Leadership,5,E030
-E013,Subordinate / ลูกน้อง,2025,Interpersonal Skills & Teamwork,3,E030
-E013,Subordinate / ลูกน้อง,2025,Professionalism & Company Values,4,E030
-E013,Subordinate / ลูกน้อง,2025,Responsiveness to Feedback,4,E030
-E013,Subordinate / ลูกน้อง,2025,Collaboration,4,E030
-E013,Subordinate / ลูกน้อง,2025,Problem-Solving & Initiative,4,E030
-E013,Subordinate / ลูกน้อง,2025,Openness to Feedback,5,E030
-E013,Subordinate / ลูกน้อง,2025,Valuing Diversity & Inclusivity,4,E030
-E013,Subordinate / ลูกน้อง,2025,Attention to Detail,3,E030
-E013,Subordinate / ลูกน้อง,2025,Data Storytelling,4,E030
-E013,Subordinate / ลูกน้อง,2025,Flexibility,5,E030
-E013,Subordinate / ลูกน้อง,2025,Negotiation skills,4,E030
-E013,Subordinate / ลูกน้อง,2025,Critical Thinking,3,E030
+employee_id,evaluator_type,evaluation_year,criteria,score,evaluator_id,type,value,text_response
+E013,Self / ตัวเอง,2024,Time Management,2.0,E013,,,
+E013,Self / ตัวเอง,2024,Communication,3.0,E013,,,
+E013,Self / ตัวเอง,2024,Leadership,1.0,E013,,,
+E013,Self / ตัวเอง,2024,Interpersonal Skills & Teamwork,4.0,E013,,,
+E013,Self / ตัวเอง,2024,Professionalism & Company Values,5.0,E013,,,
+E013,Self / ตัวเอง,2024,Responsiveness to Feedback,3.0,E013,,,
+E013,Self / ตัวเอง,2024,Collaboration,4.0,E013,,,
+E013,Self / ตัวเอง,2024,Problem-Solving & Initiative,3.0,E013,,,
+E013,Self / ตัวเอง,2024,Openness to Feedback,5.0,E013,,,
+E013,Self / ตัวเอง,2024,Valuing Diversity & Inclusivity,4.0,E013,,,
+E013,Self / ตัวเอง,2024,Attention to Detail,4.0,E013,,,
+E013,Self / ตัวเอง,2024,Data Storytelling,2.0,E013,,,
+E013,Self / ตัวเอง,2024,Flexibility,4.0,E013,,,
+E013,Self / ตัวเอง,2024,Negotiation skills,3.0,E013,,,
+E013,Self / ตัวเอง,2024,Critical Thinking,4.0,E013,,,
+E013,Self / ตัวเอง,2025,Time Management,3.0,E013,,,
+E013,Self / ตัวเอง,2025,Communication,4.0,E013,,,
+E013,Self / ตัวเอง,2025,Leadership,3.0,E013,,,
+E013,Self / ตัวเอง,2025,Interpersonal Skills & Teamwork,5.0,E013,,,
+E013,Self / ตัวเอง,2025,Professionalism & Company Values,5.0,E013,,,
+E013,Self / ตัวเอง,2025,Responsiveness to Feedback,4.0,E013,,,
+E013,Self / ตัวเอง,2025,Collaboration,5.0,E013,,,
+E013,Self / ตัวเอง,2025,Problem-Solving & Initiative,3.0,E013,,,
+E013,Self / ตัวเอง,2025,Openness to Feedback,5.0,E013,,,
+E013,Self / ตัวเอง,2025,Valuing Diversity & Inclusivity,4.0,E013,,,
+E013,Self / ตัวเอง,2025,Attention to Detail,4.0,E013,,,
+E013,Self / ตัวเอง,2025,Data Storytelling,3.0,E013,,,
+E013,Self / ตัวเอง,2025,Flexibility,4.0,E013,,,
+E013,Self / ตัวเอง,2025,Negotiation skills,4.0,E013,,,
+E013,Self / ตัวเอง,2025,Critical Thinking,4.0,E013,,,
+E013,Manager / ผู้จัดการ,2024,Time Management,3.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Communication,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Leadership,3.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Interpersonal Skills & Teamwork,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Professionalism & Company Values,3.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Responsiveness to Feedback,2.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Collaboration,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Problem-Solving & Initiative,3.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Openness to Feedback,3.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Valuing Diversity & Inclusivity,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Attention to Detail,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Data Storytelling,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Flexibility,3.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Negotiation skills,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2024,Critical Thinking,3.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Time Management,5.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Communication,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Leadership,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Interpersonal Skills & Teamwork,5.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Professionalism & Company Values,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Responsiveness to Feedback,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Collaboration,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Problem-Solving & Initiative,3.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Openness to Feedback,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Valuing Diversity & Inclusivity,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Attention to Detail,5.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Data Storytelling,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Flexibility,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Negotiation skills,4.0,E020,,,
+E013,Manager / ผู้จัดการ,2025,Critical Thinking,3.0,E020,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Time Management,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Communication,2.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Leadership,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Interpersonal Skills & Teamwork,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Professionalism & Company Values,2.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Responsiveness to Feedback,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Collaboration,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Problem-Solving & Initiative,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Openness to Feedback,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Valuing Diversity & Inclusivity,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Attention to Detail,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Data Storytelling,2.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Flexibility,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Negotiation skills,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Critical Thinking,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Time Management,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Communication,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Leadership,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Interpersonal Skills & Teamwork,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Professionalism & Company Values,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Responsiveness to Feedback,5.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Collaboration,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Problem-Solving & Initiative,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Openness to Feedback,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Valuing Diversity & Inclusivity,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Attention to Detail,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Data Storytelling,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Flexibility,3.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Negotiation skills,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Critical Thinking,4.0,E014,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Time Management,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Communication,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Leadership,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Interpersonal Skills & Teamwork,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Professionalism & Company Values,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Responsiveness to Feedback,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Collaboration,5.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Problem-Solving & Initiative,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Openness to Feedback,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Valuing Diversity & Inclusivity,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Attention to Detail,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Data Storytelling,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Flexibility,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Negotiation skills,2.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2024,Critical Thinking,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Time Management,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Communication,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Leadership,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Interpersonal Skills & Teamwork,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Professionalism & Company Values,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Responsiveness to Feedback,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Collaboration,5.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Problem-Solving & Initiative,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Openness to Feedback,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Valuing Diversity & Inclusivity,5.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Attention to Detail,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Data Storytelling,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Flexibility,3.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Negotiation skills,4.0,E015,,,
+E013,Peer / เพื่อนร่วมงาน,2025,Critical Thinking,4.0,E015,,,
+E013,Subordinate / ลูกน้อง,2024,Time Management,3.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Communication,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Leadership,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Interpersonal Skills & Teamwork,3.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Professionalism & Company Values,3.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Responsiveness to Feedback,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Collaboration,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Problem-Solving & Initiative,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Openness to Feedback,3.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Valuing Diversity & Inclusivity,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Attention to Detail,3.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Data Storytelling,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Flexibility,3.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Negotiation skills,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2024,Critical Thinking,3.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Time Management,5.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Communication,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Leadership,5.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Interpersonal Skills & Teamwork,3.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Professionalism & Company Values,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Responsiveness to Feedback,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Collaboration,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Problem-Solving & Initiative,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Openness to Feedback,5.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Valuing Diversity & Inclusivity,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Attention to Detail,3.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Data Storytelling,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Flexibility,5.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Negotiation skills,4.0,E030,,,
+E013,Subordinate / ลูกน้อง,2025,Critical Thinking,3.0,E030,,,

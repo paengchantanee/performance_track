@@ -2,10 +2,35 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import os
+import json
+
+# Load configuration to check if custom criteria is enabled
+CONFIG_FILE = "config.json"
+DEFAULT_CRITERIA_FILE = "criteria_config.csv"
+CUSTOM_CRITERIA_FILE = "custom_criteria.csv"
+
+# Fallback config
+config = {"use_custom": False}
+if os.path.exists(CONFIG_FILE):
+    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+        config = json.load(f)
+
+# Load criteria file
+if config.get("use_custom") and os.path.exists(CUSTOM_CRITERIA_FILE):
+    criteria_df = pd.read_csv(CUSTOM_CRITERIA_FILE)
+    st.info("🛠 Using custom criteria set from admin.")
+elif os.path.exists(DEFAULT_CRITERIA_FILE):
+    criteria_df = pd.read_csv(DEFAULT_CRITERIA_FILE)
+    st.info("📌 Using default criteria set.")
+else:
+    st.error("❌ No criteria file found. Please upload `criteria_config.csv` or `custom_criteria.csv`.")
+    st.stop()
+
 
 # Load data
 employee_df = pd.read_csv("employee_info.csv")
-criteria_df = pd.read_csv("criteria_config.csv")
+#criteria_df = pd.read_csv("criteria_config.csv")
 eval_df = pd.read_csv("evaluation_data.csv")
 
 # Title
