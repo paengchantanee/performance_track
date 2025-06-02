@@ -1,10 +1,9 @@
-import streamlit as st
+import streamlit as st 
 import pandas as pd
 import os
 import json
 
 # --- Config ---
-
 CONFIG_FILE = "config.json"
 
 def load_config():
@@ -25,8 +24,7 @@ st.header("📝 360° Evaluation Form (กรอกแบบประเมิ�
 st.write("- This evaluation form is designed for 360-degree evaluation, " \
          "which requires gathering opinions from managers, peers, subordinates, and even oneself " \
          "to obtain a well-rounded and multi-perspective assessment for reliable results.")
-st.caption("- แบบประเมินพนักงานนี้ออกแบบมาเพื่อทำการประเมินผลรอบทิศแบบ 360 องษา " \
-           "ซึ่งเป็นการประเมินที่ต้องสอบถามความคิดเห็นกับการทำงานทั้งหมดแบบครบองค์รวม 360 องษา")
+st.caption("- แบบประเมินพนักงานนี้ออกแบบมาเพื่อทำการประเมินผลรอบทิศแบบ 360 องษา")
 st.write("___")
 
 # --- Load data ---
@@ -48,12 +46,7 @@ department = employee_row["department"]
 core_criteria_df = criteria_config[criteria_config["department"] == "Core"]
 dept_criteria_df = criteria_config[criteria_config["department"] == department]
 
-core_criteria = core_criteria_df["criteria"].tolist()
-department_criteria = dept_criteria_df["criteria"].tolist()
-captions_eng = pd.concat([core_criteria_df, dept_criteria_df]).set_index("criteria")["caption_eng"].to_dict()
-captions_th = pd.concat([core_criteria_df, dept_criteria_df]).set_index("criteria")["caption_th"].to_dict()
-
-all_criteria = core_criteria + department_criteria
+all_criteria_df = pd.concat([core_criteria_df, dept_criteria_df], ignore_index=True)
 
 # --- Form ---
 with st.form("evaluation_form"):
@@ -63,29 +56,56 @@ with st.form("evaluation_form"):
     st.write("___")
 
     st.subheader("**📋 Please rate the employee on the following competencies**")
-    st.write("- Using a scale of 1 to 5, where 1 is the least and 5 is the most")
-    st.write("- โปรดให้คะแนนพนักงานตามเกณฐ์ต่อไปนี้ด้วยคะแนน 1 ถึง 5")
     st.badge(f"{'Custom' if use_custom else 'Default'} Questionnaire")
 
-    scores = {}
-    for crit in all_criteria:
-        st.write(f">**{crit}**")
-        st.caption(captions_th.get(crit, ""))
-        score = st.slider(captions_eng.get(crit, crit), 1, 5, 3)
-        scores[crit] = score
+    responses = []
+
+    for _, row in all_criteria_df.iterrows():
+        crit = row["criteria"]
+        caption_eng = row.get("caption_eng", crit)
+        caption_th = row.get("caption_th", "")
+        q_type = row.get("type", "rating").strip().lower()
+
+        st.markdown(f"**{caption_eng}**")
+        st.caption(caption_th)
+
+        # Default values
+        score = ""
+        value = ""
+        text_response = ""
+        typ = ""
+
+        if q_type == "rating":
+            score = st.slider(crit, 1, 5, 3, key=crit)
+            typ = ""  # default score, so type is blank
+        elif q_type in ["numeric", "kpi", "okr"]:
+            value = st.number_input(crit, step=1.0, format="%f", key=crit)
+            typ = q_type  # keep type
+        elif q_type == "text":
+            text_response = st.text_area(crit, key=crit)
+            typ = "text"
+        else:
+            # fallback
+            score = st.slider(crit, 1, 5, 3, key=crit + "_fallback")
+            typ = ""
+
+        responses.append({
+            "employee_id": employee_id,
+            "evaluator_id": evaluator_id,
+            "evaluator_type": evaluator_type,
+            "evaluation_year": year,
+            "criteria": crit,
+            "type": typ,
+            "score": score,
+            "value": value,
+            "text_response": text_response
+        })
 
     submitted = st.form_submit_button("✅ Submit / ส่งแบบประเมิน")
 
 # --- Save data ---
 if submitted:
-    new_data = pd.DataFrame([{
-        "employee_id": employee_id,
-        "evaluator_id": evaluator_id,
-        "evaluator_type": evaluator_type,
-        "evaluation_year": year,
-        "criteria": crit,
-        "score": score
-    } for crit, score in scores.items()])
+    new_data = pd.DataFrame(responses)
 
     if os.path.exists("evaluation_data.csv"):
         old_data = pd.read_csv("evaluation_data.csv")

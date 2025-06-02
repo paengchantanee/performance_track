@@ -1,2 +1,7 @@
 department,criteria,caption_eng,caption_th,type,target_value
-
+Finance/Accounting,aaa,aaa,aaa,rating,
+Finance/Accounting,bbb,bbb,bbb,rating,
+Finance/Accounting,ccc,ccc,ccc,numeric,50.0
+Finance/Accounting,ddd,ddd,ddd,numeric,70.0
+Finance/Accounting,eee,eee,eee,text,
+Finance/Accounting,fff,fff,fff,text,

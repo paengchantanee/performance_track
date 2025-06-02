@@ -7,9 +7,9 @@ st.header("🛠️ Admin Panel: Customize Evaluation Form")
 
 CONFIG_FILE = "config.json"
 CUSTOM_CRITERIA_FILE = "custom_criteria.csv"
-OPEN_QUESTIONS_FILE = "open_questions.csv"
 
-DEPARTMENTS = ["Core", "Finance", "HR", "IT", "Marketing", "Sales", "Operations"]
+DEPARTMENTS = ["Core", "Finance/Accounting", "HR", "IT", "Marketing", "Sales", "Operations"]
+QUESTION_TYPES = ["rating", "numeric", "text"]  # ✅ เพิ่ม text เข้ามา
 
 # Load or initialize config
 def load_config():
@@ -39,9 +39,14 @@ if use_custom:
     if os.path.exists(CUSTOM_CRITERIA_FILE):
         custom_df = pd.read_csv(CUSTOM_CRITERIA_FILE)
     else:
-        custom_df = pd.DataFrame(columns=["department", "criteria", "caption_eng", "caption_th"])
+        custom_df = pd.DataFrame(columns=["department", "criteria", "caption_eng", "caption_th", "type"])
 
-    # Render editable table with dropdown for department
+    # Ensure type column exists and is filled
+    if "type" not in custom_df.columns:
+        custom_df["type"] = "rating"
+    else:
+        custom_df["type"] = custom_df["type"].fillna("rating")
+
     edited_df = st.data_editor(
         custom_df,
         column_config={
@@ -54,6 +59,12 @@ if use_custom:
             "criteria": st.column_config.TextColumn("Criteria (Key)", required=True),
             "caption_eng": st.column_config.TextColumn("English Caption"),
             "caption_th": st.column_config.TextColumn("Thai Caption"),
+            "type": st.column_config.SelectboxColumn(
+                "Type",
+                help="Select question type: rating (1-5), numeric (e.g. KPI), or text (open-ended response)",
+                options=QUESTION_TYPES,
+                required=True,
+            ),
         },
         use_container_width=True,
         num_rows="dynamic",
@@ -63,23 +74,3 @@ if use_custom:
     if st.button("💾 Save Custom Criteria"):
         edited_df.to_csv(CUSTOM_CRITERIA_FILE, index=False)
         st.success("✅ Custom criteria saved.")
-
-    st.markdown("---")
-
-    st.subheader("📝 Customize Open-Ended Questions")
-
-    if os.path.exists(OPEN_QUESTIONS_FILE):
-        open_df = pd.read_csv(OPEN_QUESTIONS_FILE)
-    else:
-        open_df = pd.DataFrame(columns=["department", "question_eng", "question_th"])
-
-    edited_open_q = st.data_editor(
-        open_df,
-        use_container_width=True,
-        num_rows="dynamic",
-        key="open_questions_editor"
-    )
-
-    if st.button("💾 Save Open-Ended Questions"):
-        edited_open_q.to_csv(OPEN_QUESTIONS_FILE, index=False)
-        st.success("✅ Open-ended questions saved.")
