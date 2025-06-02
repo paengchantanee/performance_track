@@ -62,7 +62,7 @@ merged_eval_df = pd.merge(eval_df, employee_df[['employee_id', 'department']], o
 
 # Sidebar navigation
 st.sidebar.title("Navigation")
-section = st.sidebar.radio("Go to", ["Criteria Dashboard", "Department Focus", "Trend Over Time", "Numeric Criteria vs Target", "Text Responses"])
+section = st.sidebar.radio("Go to", ["Criteria Dashboard", "Department Focus", "Trend Over Time", "Progress Towards Goals", "Text Responses"])
 
 # Caption mapping
 caption_eng = criteria_df.set_index("criteria")["caption_eng"].to_dict()
@@ -112,10 +112,11 @@ if section == "Criteria Dashboard":
 
 elif section == "Department Focus":
     st.title("🏢 Department Focus")
+    st.caption("> สรุปค่าเฉลี่ยผลการประเมินของแต่ละแผนกในแต่ละปีที่เลือก/ เปรียบเทียบรายปี")
     departments = sorted(employee_df["department"].unique())
-    selected_department = st.selectbox("Select Department", departments)
+    selected_department = st.selectbox("Select Department/ เลือกแผนก", departments)
     available_years = sorted(eval_df["evaluation_year"].unique(), reverse=True)
-    selected_years = st.multiselect("Select Evaluation Year(s)", available_years, default=available_years[:1])
+    selected_years = st.multiselect("Select Evaluation Year(s)/ เลือกปีที่ประเมิน (สามารถเลือกได้มากกว่า 1 ปี)", available_years, default=available_years[:1])
 
     if not selected_years:
         st.warning("Please select at least one year.")
@@ -143,10 +144,11 @@ elif section == "Department Focus":
 
 elif section == "Trend Over Time":
     st.subheader("📈 Trend Over Time by Criteria")
+    st.caption("> แนวโน้มตามเกณฑ์และเวลา")
     # Trend Over Time should also primarily deal with 'rating' type criteria
     rating_criteria_for_trend = criteria_df[criteria_df["type"] == "rating"]["criteria"].unique()
     available_criteria = sorted(rating_criteria_for_trend) # Only show rating criteria for trend
-    selected_criteria = st.multiselect("Select Criteria", available_criteria, default=available_criteria[:3])
+    selected_criteria = st.multiselect("Select Criteria/ เลือกเกณฑ์การประเมิน", available_criteria, default=available_criteria[:3])
 
     if selected_criteria:
         trend_data = eval_df[eval_df["criteria"].isin(selected_criteria)]
@@ -168,8 +170,9 @@ elif section == "Trend Over Time":
     else:
         st.info("Please select at least one criterion.")
 
-elif section == "Numeric Criteria vs Target":
-    st.subheader("🎯 Numeric Criteria vs Target: Progress Towards Goals")
+elif section == "Progress Towards Goals":
+    st.subheader("🎯 Progress Towards Goals")
+    st.caption("> ความคืบหน้าสู่เป้าหมาย")
 
     # Filter for numeric criteria from criteria_df
     numeric_criteria_df = criteria_df[criteria_df["type"] == "numeric"].copy()
@@ -180,10 +183,10 @@ elif section == "Numeric Criteria vs Target":
         st.stop()
 
     available_years = sorted(merged_eval_df["evaluation_year"].dropna().unique(), reverse=True)
-    selected_years_num = st.multiselect("Select Evaluation Year(s)", available_years, default=available_years)
+    selected_years_num = st.multiselect("Select Evaluation Year(s)/ เลือกปีที่ประเมิน (สามารถเลือกได้มากกว่า 1 ปี)", available_years, default=available_years)
 
     available_departments = sorted(merged_eval_df["department"].dropna().unique())
-    selected_departments_num = st.multiselect("Select Department(s)", available_departments, default=available_departments)
+    selected_departments_num = st.multiselect("Select Department(s)/ เลือกแผนก", available_departments, default=available_departments)
 
     # Filter eval_df for numeric data based on selected criteria, years, and departments
     filtered_numeric_data = merged_eval_df[
@@ -195,7 +198,7 @@ elif section == "Numeric Criteria vs Target":
     if filtered_numeric_data.empty:
         st.info("No numeric data available for the selected filters.")
     else:
-        view_by_year = st.toggle("👁️ Display by Year", value=True)
+        view_by_year = st.toggle("Display by Year/ แสดงผลแยกตามปี", value=True)
 
         for crit in numeric_criteria_list:
             display_name = caption_eng.get(crit, crit)
@@ -248,7 +251,8 @@ elif section == "Numeric Criteria vs Target":
 ## Text Responses
 
 elif section == "Text Responses":
-    st.subheader("📝 Text Responses by Year and Criteria")
+    st.subheader("💬 Text Responses by Year and Criteria")
+    st.caption("> ข้อความความคิดเห็นจากผู้ประเมิน")
     
     # Filter for criteria of type 'text'
     text_criteria_list = criteria_df[criteria_df["type"] == "text"]["criteria"].unique()
@@ -264,7 +268,7 @@ elif section == "Text Responses":
         st.info("No text response data available.")
     else:
         # Year selector
-        selected_text_year = st.selectbox("Select Evaluation Year", available_text_years)
+        selected_text_year = st.selectbox("Select Evaluation Year/ เลือกปีที่ประเมิน", available_text_years)
 
         # Filter text data for the selected year
         year_text_data = eval_df[

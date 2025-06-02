@@ -257,10 +257,11 @@ if use_custom:
     if not numeric_criteria or numeric_data.empty:
         pass
     else:
-        st.subheader("📏 Numeric Criteria vs Target")
+        st.subheader("🎯 Numeric Criteria vs Target")
+        st.caption("> ความคืบหน้าสู่เป้าหมาย")
 
         # Add toggle to switch between modes
-        view_by_year = st.toggle("👁️ แสดงผลแยกตามปี", value=True)
+        view_by_year = st.toggle("Display by Year/ แสดงผลแยกตามปี", value=True)
 
         for crit in numeric_criteria:
             st.markdown(f"**{crit}**")
@@ -296,7 +297,7 @@ if use_custom:
         st.info("No text responses found for this employee in the selected year(s).")
     else:
         st.subheader("💬 Text Responses")
-        st.caption("> ข้อความความคิดเห็นจากผู้ประเมิน แสดงตามเกณฑ์และปี")
+        st.caption("> ข้อความความคิดเห็นจากผู้ประเมิน")
 
         # Get unique criteria that have text data for the selected employee and years
         criteria_with_text_data = sorted(text_data["criteria"].unique())

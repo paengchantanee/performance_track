@@ -4,7 +4,7 @@ import json
 import os
 
 st.header("🛠️ Admin Panel: Customize Evaluation Form")
-
+st.caption("> ระบบแอดมิน: ปรับแต่งแบบประเมิน")
 CONFIG_FILE = "config.json"
 CUSTOM_CRITERIA_FILE = "custom_criteria.csv"
 
@@ -27,7 +27,7 @@ def save_config(config):
 config = load_config()
 
 # Toggle custom form usage
-use_custom = st.checkbox("Use custom evaluation form", value=config.get("use_custom", False))
+use_custom = st.checkbox("Click if you want to custom evaluation form/ คลิกเมื่อต้องการใช้แบบประเมินที่ปรับแต่งเอง", value=config.get("use_custom", False))
 config["use_custom"] = use_custom
 save_config(config)
 
@@ -35,6 +35,8 @@ st.markdown("---")
 
 if use_custom:
     st.subheader("✏️ Customize Criteria Questions")
+    st.caption("> ปรับแต่งแบบประเมิน สามารถเพิ่มหรือลบคำถามได้")
+    st.info("> หมายเหตุ: เมื่อเลือกคำถามเชิงตัวเลข (numeric) สามารถใส่ target หรือค่าเป้าหมายได้")
 
     if os.path.exists(CUSTOM_CRITERIA_FILE):
         custom_df = pd.read_csv(CUSTOM_CRITERIA_FILE)
@@ -71,6 +73,6 @@ if use_custom:
         key="custom_criteria_editor"
     )
 
-    if st.button("💾 Save Custom Criteria"):
+    if st.button("💾 Save Custom Criteria/ บันทึกแบบประเมิน"):
         edited_df.to_csv(CUSTOM_CRITERIA_FILE, index=False)
-        st.success("✅ Custom criteria saved.")
+        st.success("✅ Custom criteria saved/ บันทึกสำเร็จ")
