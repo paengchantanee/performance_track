@@ -5,11 +5,12 @@ import os
 
 st.header("🛠️ Admin Panel: Customize Evaluation Form")
 st.caption("> ระบบแอดมิน: ปรับแต่งแบบประเมิน")
+
 CONFIG_FILE = "config.json"
 CUSTOM_CRITERIA_FILE = "custom_criteria.csv"
 
 DEPARTMENTS = ["Core", "Finance/Accounting", "HR", "IT", "Marketing", "Sales", "Operations"]
-QUESTION_TYPES = ["rating", "numeric", "text"]  # ✅ เพิ่ม text เข้ามา
+QUESTION_TYPES = ["rating", "numeric", "text"]
 
 # Load or initialize config
 def load_config():
@@ -26,13 +27,34 @@ def save_config(config):
 
 config = load_config()
 
-# Toggle custom form usage
+# Toggle custom
 use_custom = st.checkbox("Click if you want to custom evaluation form/ คลิกเมื่อต้องการใช้แบบประเมินที่ปรับแต่งเอง", value=config.get("use_custom", False))
 config["use_custom"] = use_custom
 save_config(config)
 
 st.markdown("---")
 
+# Show default criteria
+with st.expander("📋 View Default Evaluation Criteria / ดูเกณฑ์ประเมินเริ่มต้น"):
+    if os.path.exists("criteria_config.csv"):
+        default_df = pd.read_csv("criteria_config.csv")
+        
+        # Dropdown for department selection
+        selected_dept = st.selectbox("Select department to view / เลือกแผนก", ["All"] + DEPARTMENTS)
+
+        # Filter by selected department
+        if selected_dept != "All":
+            filtered_df = default_df[default_df["department"] == selected_dept]
+            filtered_df.index = range(1, len(filtered_df) + 1)
+        else:
+            filtered_df = default_df
+
+        default_df.index = range(1, len(default_df) + 1)
+        st.dataframe(filtered_df, use_container_width=True)
+    else:
+        st.warning("⚠️ Default criteria file (criteria_config.csv) not found. / ไม่พบเจอไฟล์ criteria_config.csv")
+
+# Customize criteria
 if use_custom:
     st.subheader("✏️ Customize Criteria Questions")
     st.caption("> ปรับแต่งแบบประเมิน สามารถเพิ่มหรือลบคำถามได้")
@@ -43,7 +65,6 @@ if use_custom:
     else:
         custom_df = pd.DataFrame(columns=["department", "criteria", "caption_eng", "caption_th", "type"])
 
-    # Ensure type column exists and is filled
     if "type" not in custom_df.columns:
         custom_df["type"] = "rating"
     else:
@@ -54,7 +75,7 @@ if use_custom:
         column_config={
             "department": st.column_config.SelectboxColumn(
                 "Department",
-                help="Select the department this question belongs to.",
+                help="Select the department this question belongs to. / เลือกแผนก",
                 options=DEPARTMENTS,
                 required=True,
             ),
@@ -63,7 +84,7 @@ if use_custom:
             "caption_th": st.column_config.TextColumn("Thai Caption"),
             "type": st.column_config.SelectboxColumn(
                 "Type",
-                help="Select question type: rating (1-5), numeric (e.g. KPI), or text (open-ended response)",
+                help="Select question type / เลือกประเภทของคำถาม: rating (1-5), numeric (e.g. KPI), or text (open-ended response / คำถามแบบปลายเปิด)",
                 options=QUESTION_TYPES,
                 required=True,
             ),

@@ -26,7 +26,7 @@ elif os.path.exists(DEFAULT_CRITERIA_FILE):
     criteria_df = pd.read_csv(DEFAULT_CRITERIA_FILE)
     st.info("📌 Using default criteria set.")
 else:
-    st.error("❌ No criteria file found. Please upload `criteria_config.csv` or `custom_criteria.csv`.")
+    st.error("❌ No criteria file found. Please upload `criteria_config.csv` or `custom_criteria.csv`. / ไม่พบไฟล์ โปรดอัปโหลด `criteria_config.csv` หรือ `custom_criteria.csv`")
     st.stop()
 
 # Load data
@@ -38,7 +38,7 @@ st.title("📊 Employee Evaluation Dashboard")
 st.write("- Individual insights across competencies")
 st.caption("- สรุปผลการประเมินเชิงลึกของแต่ละพนักงาน")
 
-# Select year(s) - This is the primary year selector
+# Select year(s)
 available_years = sorted(eval_df["evaluation_year"].dropna().unique(), reverse=True)
 
 if available_years:
@@ -48,10 +48,10 @@ if available_years:
         default=[available_years[0]]
     )
 else:
-    st.warning("⚠️ No evaluation data available. Please fill the form first.")
+    st.warning("⚠️ No evaluation data available. Please fill the form first. / ยังไม่มีข้อมูลการประเมิน โปรดทำแบบประเมินก่อน")
     st.stop()
 
-# Filter evaluation data based on the primary year selection
+# Filter by selected year
 eval_selected = eval_df[eval_df["evaluation_year"].isin(selected_years)]
 
 # Select department and employee
@@ -60,18 +60,18 @@ selected_department = st.selectbox("Select department / เลือกแผน
 
 filtered_employees = employee_df[employee_df["department"] == selected_department]
 employee_names = filtered_employees["name"].tolist()
-employee_selected = st.selectbox("Select employee / เลือกพนักงาน ", employee_names)
+employee_selected = st.selectbox("Select employee / เลือกพนักงาน", employee_names)
 
 # Get employee info
 emp_row = filtered_employees[filtered_employees["name"] == employee_selected].iloc[0]
 emp_id = emp_row["employee_id"]
 emp_dept = emp_row["department"]
 
-# Filter evaluation data for the selected employee and years
+# Filter by selected employee
 emp_eval = eval_selected[eval_selected["employee_id"] == emp_id]
 
 if emp_eval.empty:
-    st.warning("No evaluations found for this employee in the selected year(s).")
+    st.warning("No evaluations found for this employee in the selected year(s). / ไม่พบข้อมูลการประเมินของพนักงานคนนี้ในปีที่คุณเลือก")
     st.stop()
 
 # Merge captions and define criteria by type
@@ -102,7 +102,7 @@ st.write("___")
 num_evaluators = emp_eval["evaluator_id"].nunique()
 st.metric("👥 Number of Evaluator / จำนวนคนประเมิน", num_evaluators)
 
-# 2. Bar Chart of Average Scores (only rating)
+# 2. Bar Chart of Average Scores
 st.subheader("🔹 Average Scores by Criteria / Yearly Comparison")
 st.caption("> คะแนนเฉลี่ยตามเกณฑ์ / เปรียบเทียบรายปี")
 
@@ -171,7 +171,7 @@ with col2:
     for _, row in latest_avg.head(3).iterrows():
         st.write(f"- {row['criteria']} ({row['score']:.2f})")
 
-# 5. Evaluator Breakdown (rating only)
+# 5. Evaluator Breakdown
 st.subheader("🔸 Self vs Others Comparison")
 st.caption("> ตนเอง vs. ผู้อื่น")
 
@@ -208,18 +208,7 @@ fig.update_layout(
 )
 st.plotly_chart(fig, use_container_width=True)
 
-# 6. Summary Table
-st.subheader("📋 Summary Table")
-st.caption("> ตารางสรุป")
-table = latest_avg.copy()
-table["Description"] = table["criteria"].map(caption_eng)
-table["คำอธิบาย"] = table["criteria"].map(caption_th)
-table.columns = ["Criteria", "Avg Score", "Description", "คำอธิบาย"]
-table["Avg Score"] = table["Avg Score"].round(2)
-table.index = range(1, len(table) + 1)
-st.dataframe(table, use_container_width=True)
-
-# 7. Trend Over Time (rating only)
+# 6. Trend Over Time
 st.subheader("📈 Trend Over Time")
 st.caption("> แนวโน้มรายปี")
 
@@ -228,7 +217,7 @@ all_emp_eval = all_emp_eval[all_emp_eval["criteria"].isin(rating_criteria)]
 criteria_options = all_emp_eval["criteria"].unique()
 
 if len(criteria_options) > 0:
-    selected_criterion = st.selectbox("Select a criterion to view trend", criteria_options)
+    selected_criterion = st.selectbox("Select a criterion to view trend / เลือกเกณฑ์ต้องการจะดู", criteria_options)
 
     trend = all_emp_eval[all_emp_eval["criteria"] == selected_criterion]
     trend = trend.groupby("evaluation_year")["score"].mean().reset_index()
@@ -249,7 +238,18 @@ if len(criteria_options) > 0:
     )
     st.plotly_chart(fig, use_container_width=True)
 
-# 8. Numeric Criteria Progress (custom only)
+# 7. Summary Table
+st.subheader("📋 Summary Table")
+st.caption("> ตารางสรุป")
+table = latest_avg.copy()
+table["Description"] = table["criteria"].map(caption_eng)
+table["คำอธิบาย"] = table["criteria"].map(caption_th)
+table.columns = ["Criteria", "Avg Score", "Description", "คำอธิบาย"]
+table["Avg Score"] = table["Avg Score"].round(2)
+table.index = range(1, len(table) + 1)
+st.dataframe(table, use_container_width=True)
+
+# 8. Progress Towards Goals (custom only)
 if use_custom:
     numeric_criteria = [c for c, t in type_map.items() if t == "numeric"]
     numeric_data = emp_eval[emp_eval["criteria"].isin(numeric_criteria)]
@@ -257,7 +257,7 @@ if use_custom:
     if not numeric_criteria or numeric_data.empty:
         pass
     else:
-        st.subheader("🎯 Numeric Criteria vs Target")
+        st.subheader("🎯  Progress Towards Goals")
         st.caption("> ความคืบหน้าสู่เป้าหมาย")
 
         # Add toggle to switch between modes
@@ -275,18 +275,20 @@ if use_custom:
                     if not values.empty:
                         avg_val = values.mean()
                         progress_ratio = min(avg_val / target, 1.0) if target > 0 else 0.0
-                        st.progress(progress_ratio, text=f"{year}: {avg_val:.2f} / {target:.2f}")
+                        percent = progress_ratio * 100
+                        st.progress(progress_ratio, text=f"{year}: {avg_val:.2f} / {target:.2f} ({percent:.1f}%)")
                     else:
-                        st.info(f"No data for '{crit}' in {year}.")
+                        st.info(f"No data for '{crit}' in {year}. / ไม่พบข้อมูล")
             else:
                 # Aggregate view (all years)
                 values = numeric_data[numeric_data["criteria"] == crit]["value"].dropna().astype(float)
                 if not values.empty:
                     avg_val = values.mean()
                     progress_ratio = min(avg_val / target, 1.0) if target > 0 else 0.0
-                    st.progress(progress_ratio, text=f"Average: {avg_val:.2f} / {target:.2f}")
+                    percent = progress_ratio * 100
+                    st.progress(progress_ratio, text=f"Average: {avg_val:.2f} / {target:.2f} ({percent:.1f}%)")
                 else:
-                    st.info(f"No overall data for '{crit}'.")
+                    st.info(f"No overall data for '{crit}'. / ไม่พบข้อมูล")
 
 # 9. Text Responses (custom only)
 if use_custom:
@@ -294,16 +296,16 @@ if use_custom:
     text_data = emp_eval[emp_eval["criteria"].isin(text_criteria)]
 
     if not text_criteria or text_data.empty:
-        st.info("No text responses found for this employee in the selected year(s).")
+        st.info("No text responses found for this employee in the selected year(s). / ไม่พบข้อมูลสำหรับพนักงานคนนี้ในปีที่คุณเลือก")
     else:
         st.subheader("💬 Text Responses")
-        st.caption("> ข้อความความคิดเห็นจากผู้ประเมิน")
+        st.caption("> ความคิดเห็นจากผู้ประเมิน")
 
         # Get unique criteria that have text data for the selected employee and years
         criteria_with_text_data = sorted(text_data["criteria"].unique())
 
         if not criteria_with_text_data:
-            st.info("No text responses available for the selected employee and years.")
+            st.info("No text responses available for the selected employee and years. / ไม่พบข้อมูลสำหรับพนักงานคนนี้ในปีที่คุณเลือก")
         else:
             # Iterate through each text criterion
             for crit in criteria_with_text_data:
@@ -334,6 +336,4 @@ if use_custom:
                             else:
                                 st.markdown(f"**{year} Responses:** *No responses provided for this year.*")
                 else:
-                    # This case should ideally be caught by the outer if-else if criteria_with_text_data is empty,
-                    # but good for robustness if a criterion exists but has no actual text.
                     st.info(f"No text responses provided for '{criteria_display_name}' in the selected years.")
