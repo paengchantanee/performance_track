@@ -155,16 +155,16 @@ elif section == "Trend Over Time":
         trend_data = eval_df[eval_df["criteria"].isin(selected_criteria)]
         trend_summary = trend_data.groupby(["evaluation_year", "criteria"])["score"].mean().reset_index()
         trend_summary["score"] = trend_summary["score"].round(2)
-        trend_summary["caption"] = trend_summary["criteria"].map(caption_eng)
+        #trend_summary["caption"] = trend_summary["criteria"].map(caption_eng)
 
         fig = px.line(
             trend_summary,
             x="evaluation_year",
             y="score",
-            color="caption",
+            color="criteria",
             markers=True,
             title="Average Score Trend",
-            labels={"evaluation_year": "Year", "score": "Avg Score", "caption": "Criteria"}
+            labels={"evaluation_year": "Year", "score": "Avg Score", "criteria": "Criteria"}
         )
         fig.update_layout(xaxis=dict(dtick=1))
         st.plotly_chart(fig, use_container_width=True)
