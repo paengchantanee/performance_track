@@ -65,6 +65,7 @@ section = st.sidebar.radio("Go to", ["Criteria Dashboard", "Department Focus", "
 
 # Caption mapping
 caption_eng = criteria_df.set_index("criteria")["caption_eng"].to_dict()
+caption_th = criteria_df.set_index("criteria")["caption_th"].to_dict()
 
 # Create target_map from criteria_df
 target_map = criteria_df.set_index("criteria")["target_value"].to_dict()
@@ -202,8 +203,11 @@ elif section == "Progress Towards Goals":
         view_by_year = st.toggle("Display by Year/ แสดงผลแยกตามปี", value=True)
 
         for crit in numeric_criteria_list:
-            display_name = caption_eng.get(crit, crit)
-            st.markdown(f"**{display_name}**")
+            st.markdown(f"**{crit}**")
+            cap_eng = caption_eng.get(crit, crit)
+            cap_th = caption_th.get(crit, crit)
+            st.write(cap_eng)
+            st.caption(cap_th)
 
             # Get the target from numeric_criteria_df
             target_series = numeric_criteria_df[numeric_criteria_df["criteria"] == crit]["target_value"]

@@ -265,6 +265,10 @@ if use_custom:
 
         for crit in numeric_criteria:
             st.markdown(f"**{crit}**")
+            cap_eng = caption_eng.get(crit, crit)
+            cap_th = caption_th.get(crit, crit)
+            st.write(cap_eng)
+            st.caption(cap_th)
             target = float(target_map.get(crit, 0))
 
             if view_by_year:

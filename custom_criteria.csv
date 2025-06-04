@@ -1,8 +1,7 @@
 department,criteria,caption_eng,caption_th,type,target_value
-Finance/Accounting,aaa,aaa,aaa,rating,
-Finance/Accounting,bbb,bbb,bbb,rating,
-Finance/Accounting,ccc,ccc,ccc,numeric,50.0
-Finance/Accounting,ddd,ddd,ddd,numeric,70.0
-Finance/Accounting,eee,eee,eee,text,
-Finance/Accounting,fff,fff,fff,text,
-Finance/Accounting,hhh,hhh,hhh,text,
+Finance/Accounting,Accuracy,"Does this employee ensures accuracy and attention to detail in financial recodes, reports, and transactions or not",พนักงานคนนี้มีความแม่นยำและความละเอียดรอบคอบอย่างสม่ำเสมอในการบันทึกรายงาน และรายงานทางการเงินหรือไม่,rating,
+Finance/Accounting,Finacial analysis,"Does this employee effectively analyzes financial data, identifies trends, and provides insightful recommendations for problem-solving or not",พนักงานคนนี้สามารถวิเคราะห์ข้อมูลทางการเงินได้อย่างมีประสิทธิภาพ ระบุแนวโน้ม และให้ข้อเสนอแนะเชิงลึกในการแก้ไขปัญหาได้หรือไม่,rating,
+Finance/Accounting,Cost reduce,"Achieve a direct cost reduction of 50,000 baht within the department or specific projects.","บรรลุเป้าหมายการลดต้นทุน 50,000 บาทภายในแผนกหรืองานโครงการที่รับผิดชอบ",numeric,50000
+Finance/Accounting,Transaction accuracy,Maintain a transaction processing accuracy rate of 99.5% or higher.,รักษาระดับอัตราความถูกต้องของการประมวลผลรายการธุรกรรมให้อยู่ที่ 99.5% หรือสูงกว่า,numeric,99.5
+Finance/Accounting,Key strenghts,Describe the employee's key strengths and significant contributions to the Finance/Accounting department this period.,โปรดอธิบายจุดแข็งที่สำคัญและผลงานเด่นของพนักงานที่มีต่อแผนกการเงิน/บัญชีในรอบการประเมินนี้,text,
+Finance/Accounting,Areas for Development,What specific areas or skills should the employee focus on for professional development in their finance/accounting role?,พนักงานควรเน้นการพัฒนาด้านใดหรือทักษะใดเป็นพิเศษ เพื่อส่งเสริมบทบาทหน้าที่ทางการเงิน/บัญชีของตนเอง,text,
