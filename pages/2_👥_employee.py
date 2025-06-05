@@ -7,6 +7,12 @@ st.write("- This application is designed to help you manage employee information
 st.caption("- แอปพลิเคชันนี้ถูกออกแบบมาเพื่อช่วยคุณจัดการข้อมูลพนักงาน โดยสามารถดูรายชื่อพนักงาน เพิ่มพนักงานใหม่ หรือลบพนักงานออกจากระบบได้")
 st.write("___")
 
+# Load existing employee data
+if os.path.exists("employee_info.csv"):
+    employee_df = pd.read_csv("employee_info.csv")
+else:
+    employee_df = pd.DataFrame(columns=["employee_id", "name", "Department"])
+    
 # Upload Excel file to add/replace employee data
 st.subheader("📤 Upload Employee Excel File")
 st.caption("> อัปโหลดไฟล์ Excel เพื่อเพิ่มหรือแทนที่ข้อมูลพนักงาน")
@@ -40,14 +46,7 @@ if uploaded_file:
         else:
             st.error("❌ Excel file must contain 'employee_id', 'name', and 'department' columns.")
     except Exception as e:
-        st.error(f"❌ Error reading Excel file: {e}")
-
-
-# Load existing employee data
-if os.path.exists("employee_info.csv"):
-    employee_df = pd.read_csv("employee_info.csv")
-else:
-    employee_df = pd.DataFrame(columns=["employee_id", "name", "Department"]) 
+        st.error(f"❌ Error reading Excel file: {e}") 
 
 # 1. Show number of all employees
 st.metric(label="Total Employees / จำนวนพนักงานทั้งหมด", value=len(employee_df))
