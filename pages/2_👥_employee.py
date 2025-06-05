@@ -12,7 +12,7 @@ if os.path.exists("employee_info.csv"):
     employee_df = pd.read_csv("employee_info.csv")
 else:
     employee_df = pd.DataFrame(columns=["employee_id", "name", "Department"])
-    
+
 # Upload Excel file to add/replace employee data
 st.subheader("📤 Upload Employee Excel File")
 st.caption("> อัปโหลดไฟล์ Excel เพื่อเพิ่มหรือแทนที่ข้อมูลพนักงาน")
@@ -29,24 +29,25 @@ if uploaded_file:
             # Confirm overwrite or append
             mode = st.radio(
                 "How do you want to handle the uploaded data?",
-                ["Replace all existing data", "Append to existing data"],
+                ["Replace all existing data(แทนที่ข้อมูลพนักงานทั้งหมด)", "Append to existing data(เพิ่มข้อมูลพนักงานจากที่มีอยู่)"],
                 horizontal=True
             )
-
-            if st.button("✅ Upload and Save"):
-                if mode == "Replace all existing data":
+            if st.button("✅ Upload and Save / อัปโหลดและบันทึก"):
+                if mode == "Replace all existing data(แทนที่ข้อมูลพนักงานทั้งหมด)":
                     new_employee_df.to_csv("employee_info.csv", index=False)
-                    st.success("✅ Employee data replaced successfully!")
+                    st.success("✅ Employee data replaced successfully! / ข้อมูลพนักงานถูกแทนที่เรียบร้อย")
                 else:  # Append
                     combined_df = pd.concat([employee_df, new_employee_df], ignore_index=True)
                     combined_df.drop_duplicates(subset=["employee_id"], keep="last", inplace=True)
                     combined_df.to_csv("employee_info.csv", index=False)
-                    st.success("✅ Employee data appended successfully!")
+                    st.success("✅ Employee data appended successfully! / ข้อมูลพนักงานถูกเพิ่มเรียบร้อย")
                 st.rerun()
         else:
-            st.error("❌ Excel file must contain 'employee_id', 'name', and 'department' columns.")
+            st.error("❌ Excel file must contain 'employee_id', 'name', and 'department' columns. / ไฟล์ Excel ต้องมี Column 'employee_id', 'name', และ 'department'")
     except Exception as e:
         st.error(f"❌ Error reading Excel file: {e}") 
+
+st.write("___")
 
 # 1. Show number of all employees
 st.metric(label="Total Employees / จำนวนพนักงานทั้งหมด", value=len(employee_df))
