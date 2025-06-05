@@ -7,6 +7,42 @@ st.write("- This application is designed to help you manage employee information
 st.caption("- แอปพลิเคชันนี้ถูกออกแบบมาเพื่อช่วยคุณจัดการข้อมูลพนักงาน โดยสามารถดูรายชื่อพนักงาน เพิ่มพนักงานใหม่ หรือลบพนักงานออกจากระบบได้")
 st.write("___")
 
+# Upload Excel file to add/replace employee data
+st.subheader("📤 Upload Employee Excel File")
+st.caption("> อัปโหลดไฟล์ Excel เพื่อเพิ่มหรือแทนที่ข้อมูลพนักงาน")
+
+uploaded_file = st.file_uploader("Choose an Excel file (.xlsx)", type=["xlsx"])
+
+if uploaded_file:
+    try:
+        new_employee_df = pd.read_excel(uploaded_file)
+
+        # Check required columns
+        required_cols = {"employee_id", "name", "department"}
+        if required_cols.issubset(new_employee_df.columns):
+            # Confirm overwrite or append
+            mode = st.radio(
+                "How do you want to handle the uploaded data?",
+                ["Replace all existing data", "Append to existing data"],
+                horizontal=True
+            )
+
+            if st.button("✅ Upload and Save"):
+                if mode == "Replace all existing data":
+                    new_employee_df.to_csv("employee_info.csv", index=False)
+                    st.success("✅ Employee data replaced successfully!")
+                else:  # Append
+                    combined_df = pd.concat([employee_df, new_employee_df], ignore_index=True)
+                    combined_df.drop_duplicates(subset=["employee_id"], keep="last", inplace=True)
+                    combined_df.to_csv("employee_info.csv", index=False)
+                    st.success("✅ Employee data appended successfully!")
+                st.rerun()
+        else:
+            st.error("❌ Excel file must contain 'employee_id', 'name', and 'department' columns.")
+    except Exception as e:
+        st.error(f"❌ Error reading Excel file: {e}")
+
+
 # Load existing employee data
 if os.path.exists("employee_info.csv"):
     employee_df = pd.read_csv("employee_info.csv")
